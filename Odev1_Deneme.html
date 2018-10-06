@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Odev 1 </title>
+</head>
+<script>
+"use strict";
+function Add(){
+var ad = Name.value
+eklenenler.push(ad);
+var vize = Number(Midterm.value);
+eklenenler.push(vize);
+var final1 = Number(Final.value);
+eklenenler.push(final1);
+avgDizi.push(ad);
+avgDizi.push((vize+final1)/2);
+
+}
+
+function makeRows(){
+
+let row = "<th></th>";
+    row += "<th>"+"Name"+"</th>";
+    row += "<th>"+"middle"+"</th>";
+	row += "<th>"+"Final"+"</th>";
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i < eklenenler.length/3; i++) {
+       row = "<th>"+"</th>";
+       
+	   row +="<td>"+eklenenler[i*3]+"</td>";
+	   row +="<td>"+eklenenler[i*3+1]+"</td>";
+	   row +="<td>"+eklenenler[i*3+2]+"</td>";
+       text += "<tr>"+row+"</tr>";
+    }
+   tablo.innerHTML = text;
+
+}
+function Print(){
+makeRows();
+}
+
+
+function avg(){
+	
+	let row = "<th></th>";
+    row += "<th>"+"Name"+"</th>";
+    row += "<th>"+"Avg"+"</th>";
+    let text2 = "<tr>"+row+"</tr>";
+	
+	for (let i = 0; i < avgDizi/2; i++) {
+       row = "<th>"+"</th>";
+       
+	   row +="<td>"+avgDizi[i*2]+"</td>";
+	   row +="<td>"+avgDizi[i*2+1]+"</td>";
+       text2 += "<tr>"+row+"</tr>";
+    }
+   tablo2.innerHTML = text2;
+}
+
+
+function Max(){
+let temp=0;
+maxDizi=[];
+	for(let i=0; i<avgDizi/2; i++){
+		if(temp==0)
+		temp=avgDizi[1];
+		
+		if(temp<avgDizi[i*2+1]){
+		  temp=avgDizi[i*2+1];
+		
+		}
+
+	}
+	
+	for(let i=0; i<avgDizi/2; i++){
+	 if(temp==avgDizi[i*2+1]){
+	    maxDizi.push(avgDizi[i*2]);
+		maxDizi.push(temp);
+	 
+	 }
+	
+	}
+	let row = "<th></th>";
+    row += "<th>"+"Name"+"</th>";
+    row += "<th>"+"Max"+"</th>";
+	let text2 = "<tr>"+row+"</tr>";
+	row = "<th>"+"</th>";
+       
+	   row +="<td>"+maxDizi[0]+"</td>";
+	   row +="<td>"+maxDizi[1]+"</td>";
+       text2 += "<tr>"+row+"</tr>";
+}
+</script>
+<body>
+
+<p>Name = <input type=text   id=Name style="width:99px"> </P>
+<p>Midterm = <input type=number   id=Midterm style="width:99px"> </P>
+<p>Final = <input type=number   id=Final style="width:99px"> </P>
+
+<p>
+
+<input type=button value="Add"  onClick="Add()">
+<input type=button value=" Print "  onClick="Print()">
+<input type=button value="Avg"   onClick="avg()">
+<input type=button value="Max"    onclick="Max()">
+</p>
+
+<table id="tablo">
+
+
+</tablo>
+<table id="tablo2">
+
+
+</tablo>
+<table id="tablo3">
+
+
+</tablo>
+</body>
+
+
+<script>
+   
+    var eklenenler=[];
+	var avgDizi=[];
+	var maxDizi=[];
+</script>
+
+
+</html>
