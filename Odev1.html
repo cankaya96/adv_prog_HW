@@ -49,11 +49,11 @@ function avg(){
     row += "<th>"+"Avg"+"</th>";
     let text2 = "<tr>"+row+"</tr>";
 	
-	for (let i = 0; i < avgDizi/2; i++) {
+	for (let k = 0; k < avgDizi.length/2; k++) {
        row = "<th>"+"</th>";
-       
-	   row +="<td>"+avgDizi[i*2]+"</td>";
-	   row +="<td>"+avgDizi[i*2+1]+"</td>";
+       console.log(avgDizi[0]);
+	   row +="<td>"+avgDizi[k*2]+"</td>";
+	   row +="<td>"+avgDizi[k*2+1]+"</td>";
        text2 += "<tr>"+row+"</tr>";
     }
    tablo2.innerHTML = text2;
@@ -63,7 +63,7 @@ function avg(){
 function Max(){
 let temp=0;
 maxDizi=[];
-	for(let i=0; i<avgDizi/2; i++){
+	for(let i=0; i<avgDizi.length/2; i++){
 		if(temp==0)
 		temp=avgDizi[1];
 		
@@ -74,11 +74,11 @@ maxDizi=[];
 
 	}
 	
-	for(let i=0; i<avgDizi/2; i++){
+	for(let i=0; i<avgDizi.length/2; i++){
 	 if(temp==avgDizi[i*2+1]){
 	    maxDizi.push(avgDizi[i*2]);
 		maxDizi.push(temp);
-	 
+		break;
 	 }
 	
 	}
@@ -90,7 +90,17 @@ maxDizi=[];
        
 	   row +="<td>"+maxDizi[0]+"</td>";
 	   row +="<td>"+maxDizi[1]+"</td>";
+	   console.log(temp);
        text2 += "<tr>"+row+"</tr>";
+	   
+	   tablo3.innerHTML = text2;
+}
+
+function Güncelle(){ 
+Print();
+avg();
+Max();
+
 }
 </script>
 <body>
@@ -105,6 +115,7 @@ maxDizi=[];
 <input type=button value=" Print "  onClick="Print()">
 <input type=button value="Avg"   onClick="avg()">
 <input type=button value="Max"    onclick="Max()">
+<input type=button value="Güncelle"    onclick="Güncelle()">
 </p>
 
 <table id="tablo">
