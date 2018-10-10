@@ -15,15 +15,30 @@ function tableFor(evt) {
   return table;
 }
 
+
 function analyze(min=0) {
+  let sayac=0;
   let a = [];
-  for (let evt of EVENTS) {
+
+for (let evt of EVENTS) {
+
+for (let entry of JOURNAL){
+  if(entry.events.includes(evt)){
+sayac++;
+ }
+}
+
     let cor = phi(tableFor(evt));
     if (Math.abs(cor) > min)
-      a.push(evt +": "+cor.toFixed(4))
-  }
+      a.push(evt +": "+cor.toFixed(4)+" "+ sayac)
+    
+sayac=0;
+  
+}
   return a
 }
+
+
 
 function journalEvents() {
   EVENTS.clear();
