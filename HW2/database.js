@@ -1,13 +1,13 @@
 class Course {
-    constructor(name, time, date, room) {
-        this.name = name
+    constructor(code, time, date, room) {
+        this.code = code
         this.time = time
         this.date = date
         this.room = room
     }
 
     toString () {
-        return (this.name+' lesson at '+this.time+' '+this.date)
+        return (this.code+' lesson at '+this.time+' '+this.date)
     }
 }
 class Student {
@@ -26,6 +26,7 @@ class Database {
     constructor () {
         this.courses = new Map()
         this.students = new Map()
+		this.rooms=new Map()
         this.readCourses()
         this.readStudents()
     }
@@ -79,7 +80,7 @@ class Database {
     }
 	
 	readCourses () {
-        var url = "https://maeyler.github.io/JS/data/Courses.txt"
+        var url = "https://cankaya96.github.io/adv_prog_HW/HW2/Courses.txt"
         fetch(url)
         .then(res => res.text()) 
         .then(res => [
@@ -88,7 +89,7 @@ class Database {
     }
 
     readStudents () {
-        var url = "https://maeyler.github.io/JS/data/Students.txt"
+        var url = "https://cankaya96.github.io/adv_prog_HW/HW2/Students.txt"
         fetch(url)
         .then(res => res.text())
         .then(res => [
