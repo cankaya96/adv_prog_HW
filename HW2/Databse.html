@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <script src="Database1.js"></script>
+
+    <title>Database </title>
+</head>
+<style>
+    span1 {
+        margin-left: 18px
+    }
+
+    span2 {
+        margin-left: 1px
+    }
+
+    span3 {
+        margin-left: 23px
+    }
+</style>
+<script>
+
+    "use strict";
+    function randomStudent() {
+        document.getElementById("mesaj1").innerHTML = db.getRandomStudent();
+    }
+    function aboveGPA() {
+        let a = document.getElementById("gpa").value;
+        document.getElementById("mesaj1").innerHTML = db.getAboveGPA(a).size;
+    }
+    function underGPA() {
+        let a = document.getElementById("gpa").value;
+        document.getElementById("mesaj1").innerHTML = db.getUnderGPA(a).size;
+    }
+    function examSchedule() {
+        let a = document.getElementById("num").value
+        var temp = "";
+        db.examSchedule(a).forEach(exam => {
+            temp+=(exam)+"\n";
+        });
+        document.getElementById("mesaj1").innerHTML = temp;
+    }
+    function takingByGivenStudent() {
+        let a = document.getElementById("num").value
+        document.getElementById("mesaj1").innerHTML = db.getStudentCourse(a);
+    }
+    function givenCourse() {
+        let a = document.getElementById("ctxt").value
+        var temp = "";
+        db.getStudentByCourse(a).forEach(kurs => {
+            temp += (kurs) + "\n";
+        });
+        document.getElementById("mesaj1").innerHTML = temp;
+    }
+    function examRoom() {
+        let a = document.getElementById("ctxt").value
+        var temp = "";
+        db.roomCourse(a).forEach(room => {
+            temp += (room) + "\n";
+        });
+        document.getElementById("mesaj1").innerHTML = temp;
+    }
+    function givenRoom() {
+        let a = document.getElementById("ctxt").value;
+        document.getElementById("mesaj1").innerHTML = db.roomCoursesNumber(a);
+    }
+</script>
+<body>
+    <h2 id= title></h2>
+    <p id=outA></p>
+    <p>
+        student ID  <span1><input type=number id=num style="width:99px"> &emsp;<br /><br> </span1>
+        GPA        <span1><input type=number id=gpa style="width:99px"> &emsp;<br /><br> </span1>
+        Course/Exam room  <span2><input type="text" id=ctxt style="width:99px"> <br /><br></span2>
+    </p>
+    <p>
+        <input type=button value="randomStudent" onClick="randomStudent()">
+        <input type=button value="underGPA" onClick="underGPA()">
+        <input type=button value="aboveGPA" onClick="aboveGPA()">
+        <input type=button onclick="examSchedule();" value="examSchedule" />
+        <input type=button onclick="takingByGivenStudent();" value="takingByGivenStudent" />
+        <input type=button onclick="givenCourse();" value="givenCourse" />
+        <input type=button onclick="examRoom();" value="examRoom" />
+        <input type=button onclick="givenRoom();" value="givenRoom" />
+    </p>
+    <hr />
+    <p>
+        <strong>Answers</strong>
+
+        <pre>
+    <p id="mesaj1"></p></pre>
+    <hr />
+    <h1 />
+    <script>
+    </script>
+</body>
+</html>
