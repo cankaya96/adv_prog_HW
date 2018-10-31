@@ -7,4 +7,5 @@ advenced programing <br>
 5- [Inspector](https://cankaya96.github.io/adv_prog_HW/inspector.html) <br>
 6- [CW4](https://cankaya96.github.io/adv_prog_HW/CW4/index1.html) <br>
 7- [HW2](https://cankaya96.github.io/adv_prog_HW/HW2/Databse.html)<br>
+8-[CW5- file compare](https://cankaya96.github.io/adv_prog_HW/CW5/compareFiles.html) <br>
 
