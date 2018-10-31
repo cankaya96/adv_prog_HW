@@ -14,7 +14,7 @@ class Student {
         return this
     }
     toString() {
-        return "Student ID: " + this.id;
+        return "Student ID: " + this.id+" "+this.name;
     }
 }
 
@@ -30,7 +30,7 @@ class Course {
         return this
     }
     toString() {
-        return "Coruse name: " + this.name
+        return "Coruse name: " + this.name +" "+this.time +" "+this.date
     }
 }
 
