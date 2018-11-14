@@ -1,0 +1,106 @@
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://maeyler.github.io/BLM305/exam/Timing.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <script src="./CW6_files/Database.js"></script>
+    <title>CW 6 </title>
+
+<script>
+"use strict";
+const url = "https://maeyler.github.io/JS/data/";
+const array = [], set = new Set() , ogrenciler = new Map();
+function readData(file) {
+    console.log("readData "+file);
+    fetch(url+file)
+        .then(r => r.text(), console.log)
+        .then(addStudents, console.log);
+}
+function parseStudent(line) {
+    let b = line.split("\t");
+    let id = b[0], name = b[1], gpa = b[2];
+    let std = new Student(id, name, gpa);
+    let list = [];
+    for (let i=3; i<b.length; i++) 
+        list.push(b[i]);
+    std.courses = list
+    return std
+}
+function addStudents(txt) {
+    let msg = "\nData contains ";
+    msg += txt.length+" chars, ";
+    let a = txt.split("\n");
+    msg += a.length+" lines \n";
+    for (let s of a) {
+      let std = parseStudent(s);
+      array.push(std.id); set.add(std.name); ogrenciler.set(std.id,std.name);
+    }
+  
+}
+var random_sayilar=[]
+var sayac=0;
+
+
+function random_uret()
+{
+  var ustSayi=999999999;
+  var altSayi=100000000;
+  for(var i=1;i<=10000;i++)
+  {
+    var sayi=Math.random();
+     sayi=sayi*(ustSayi-altSayi);
+    sayi=Math.floor(sayi)+altSayi;
+    random_sayilar.push(sayi);
+  } 
+
+  
+}
+function kiyasla()
+{
+  random_sayilar=[];
+  random_uret();
+  
+  let t = performance.now()
+    
+    for(let x of random_sayilar)
+    {     
+      if(ogrenciler.has(x)) sayac++;
+    }
+    t = performance.now() - t
+    out.innerText += "Map arama, Eşleşen öğrenci sayısı="+sayac+" süre="+ t.toPrecision(3)+" msec " +"\n"
+    sayac=0;
+
+    
+    let q = performance.now()
+    for(let c of random_sayilar)
+    {     
+        if(array.includes(c))
+        {
+          sayac++;
+          
+        }
+    }
+    q = performance.now() - q
+    out.innerText += "Array arama, Eşleşen öğrenci sayısı="+sayac+" süre="+ q.toPrecision(3)+" msec " +"\n"
+    sayac=0;
+}
+
+</script>
+</head>
+
+<body>
+<h2 id="title">CW 6</h2>
+<button onclick="kiyasla()">KIYASLA</button>
+<p id="out"></p>
+<hr>
+
+<script>
+    title.innerText = document.title;
+    readData("Students.txt")
+</script>
+
+
+
+</body></html>
