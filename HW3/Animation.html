@@ -13,30 +13,49 @@
 <style>
 
 #Haven {
-  left: 600px;
   top: 200px;
+  left: 600px;
   width: 200px;
   height: 200px;
   position: absolute;
   
-  
 }
 </style>
 
-
+<center>
+ 
 <img src="https://mindreels.files.wordpress.com/2012/09/haven_tattoo_by_gothiclass-d48v3mf.png" alt="Haven's Guards" id=Haven >
-<script>
-"use strict";
-var havenTumbling = { transform: ['rotate(0deg)','rotate(360deg)']}
 
-var havenTiming = {
-  duration: 30000,
-  iterations: Infinity
-}
+<p>
+Duration:
+<span>
+Fast 
+<input type="range" id="speed" min="300" max="3000"  oninput="durat(this.value)"> 
+Slow
+</span>
+
+</p>
+<script>
+
+"use strict";
 document.getElementById("Haven").animate(
-  havenTumbling,
-  havenTiming
-)
+  [{transform: 'rotate(0deg)'},
+  {transform: 'rotate(360deg)'}],
+  {
+  duration: 3000,
+  iterations: Infinity}
+);
+function durat(deger){
+deger=Number(deger)
+
+document.getElementById("Haven").animate(
+  [{transform: 'rotate(0deg)'},
+  {transform: 'rotate(360deg)'}],
+  {
+  duration: deger,
+  iterations: Infinity}
+);
+}
 </script>
 
 </body>
