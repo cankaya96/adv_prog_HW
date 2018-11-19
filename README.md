@@ -8,5 +8,6 @@ advenced programing <br>
 6- [CW4](https://cankaya96.github.io/adv_prog_HW/CW4/index1.html) <br>
 7- [HW2](https://cankaya96.github.io/adv_prog_HW/HW2/Databse.html)<br>
 8-[CW5- file compare](https://cankaya96.github.io/adv_prog_HW/CW5/compareFiles.html) <br>
-9-[CW6](https://cankaya96.github.io/adv_prog_HW/CW6/deneme_sayfasi.html)
+9-[CW6](https://cankaya96.github.io/adv_prog_HW/CW6/deneme_sayfasi.html) <br>
+10-[HW3-Animation](https://cankaya96.github.io/adv_prog_HW/HW3/Animation.html)
 
