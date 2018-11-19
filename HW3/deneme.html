@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Animations </title>
+
+  
+</head>
+
+<body>
+<h2 id=title></h2>
+<style>
+
+#Haven {
+  left: 600px;
+  top: 200px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  
+  
+}
+</style>
+
+
+<img src="https://mindreels.files.wordpress.com/2012/09/haven_tattoo_by_gothiclass-d48v3mf.png" alt="Haven's Guards" id=Haven >
+<script>
+"use strict";
+var havenTumbling = { transform: ['rotate(0deg)','rotate(360deg)']}
+
+var havenTiming = {
+  duration: 30000,
+  iterations: Infinity
+}
+document.getElementById("Haven").animate(
+  havenTumbling,
+  havenTiming
+)
+</script>
+
+</body>
+</html>
