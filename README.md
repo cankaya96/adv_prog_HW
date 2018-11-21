@@ -10,5 +10,5 @@ advenced programing <br>
 8-[CW5- file compare](https://cankaya96.github.io/adv_prog_HW/CW5/compareFiles.html) <br>
 9-[CW6](https://cankaya96.github.io/adv_prog_HW/CW6/deneme_sayfasi.html) <br>
 10-[HW3-Animation](https://cankaya96.github.io/adv_prog_HW/HW3/Animation.html) <br>
-11-[CW7-Tablo](https://cankaya96.github.io/adv_prog_HW/CW7.html)
+11-[CW7-Tablo](https://cankaya96.github.io/adv_prog_HW/CW7/CW7.html)
 
