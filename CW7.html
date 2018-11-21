@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CW7 </title>
+</head>
+<script>
+"use strict";
+function Add(){
+var ad = Name.value
+eklenenler.push(ad);
+var meslekler = Meslek.value;
+eklenenler.push(meslekler);
+var maaslar = Number(Maas.value);
+eklenenler.push(maaslar);
+
+
+
+}
+
+function makeRows(){
+
+let row = "<th></th>";
+    row += "<th>"+"Name"+"</th>";
+    row += "<th>"+"Meslek"+"</th>";
+	row += "<th>"+"Maaş"+"</th>";
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i < eklenenler.length/3; i++) {
+       row = "<th>"+"</th>";
+       
+	   row +="<td>"+eklenenler[i*3]+"</td>";
+	   row +="<td>"+eklenenler[i*3+1]+"</td>";
+	   row +="<td>"+eklenenler[i*3+2]+"</td>";
+       text += "<tr>"+row+"</tr>";
+    }
+   tablo.innerHTML = text;
+
+}
+function Print(){
+
+makeRows();
+}
+
+
+
+
+function Max(){
+let temp=0;
+maxDizi=[];
+	for(let i=0; i<eklenenler.length/3; i++){
+		if(temp==0)
+		temp=eklenenler[2];
+		
+		if(temp<eklenenler[i*3+2]){
+		  temp=eklenenler[i*3+2];
+		
+		}
+
+	}
+	
+	for(let i=0; i<eklenenler.length/3; i++){
+	 if(temp==eklenenler[i*3+2]){
+	    maxDizi.push(eklenenler[i*3]);
+		maxDizi.push(temp);
+		break;
+	 }
+	
+	}
+	let row = "<th></th>";
+    row += "<th>"+"Name"+"</th>";
+    row += "<th>"+"Aldığı Maaş"+"</th>";
+	let text2 = "<tr>"+row+"</tr>";
+	row = "<th>"+"</th>";
+       
+	   row +="<td>"+maxDizi[0]+"</td>";
+	   row +="<td>"+maxDizi[1]+"</td>";
+	   console.log(temp);
+       text2 += "<tr>"+row+"</tr>";
+	   
+	   tablo3.innerHTML = text2;
+}
+
+function Güncelle(){ 
+Print();
+Max();
+
+}
+</script>
+<body>
+
+<p>Name    = <input type=text   id=Name style="width:99px"> </P>
+<p>Meslek = <input type=text   id=Meslek style="width:99px"> </P>
+<p>Maaş   = <input type=number   id=Maas style="width:99px"> </P>
+
+<p>
+
+<input type=button value="Add"  onClick="Add()">
+<input type=button value=" Print "  onClick="Print()">
+<input type=button value="Max"    onclick="Max()">
+<input type=button value="Güncelle"    onclick="Güncelle()">
+</p>
+<hr />
+<table id="tablo" >
+
+
+
+
+</table>
+<hr />
+<table id="tablo3">
+
+
+</table>
+
+
+
+Ref: 
+<a href="https://maeyler.github.io/JS/hard/Table%20maker.html" target="ExternalDocument">Table Examples</a>
+</body>
+
+
+<script>
+   
+    var eklenenler=[];
+	var maxDizi=[];
+</script>
+
+
+</html>
