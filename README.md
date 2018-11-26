@@ -1,6 +1,6 @@
-adv_prog_HW
+advenced programing <br>
 
-[advenced programing ](https://github.com/cankaya96/adv_prog_HW)<br>
+[adv_prog_HW](https://github.com/cankaya96/adv_prog_HW)<br>
 
 CLASS WORKS
 - [Array Methods](https://cankaya96.github.io/adv_prog_HW/Array%20Demo.html) <br>
