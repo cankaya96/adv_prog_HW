@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://maeyler.github.io/BLM305/work/Graphics.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <title>SVG </title>
+
+  <style>
+    svg {
+        background: cyan;
+        font: 10px arial, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>Using SVG</h2>
+<svg id="svg" width="340" height="100">
+  <circle id ="c" cx="50" cy="50" r="40" style="fill:yellow;stroke:blue;stroke-width:4"></circle>
+  <text x="35" y="55" fill="black">Circle</text>
+  <rect id="r"x="110" y="10" width="100" height="80" style="fill:pink;stroke:red;stroke-width:5"></rect>
+  <text x="145" y="55" fill="blue">Rect</text>
+
+<hr>
+<button type="button" name="btn" onclick="svg_boyut(1)" >boyutu arttır</button>
+<button type="button" name="btn" onclick="svg_boyut(2)" >boyutu azalt</button><br>
+Svg arkaplan rengi değişimi <input id ="color1" type="color" value="#f00ff0" onchange="svg1()"><br>
+Circle arkaplan değişimi <input id ="color2" type="color" value="#f00ff0" onchange="circle(1)"><br>
+Rectangle arkaplan değişimi <input id ="color3" type="color" value="#f00ff0" onchange="rect()"><br>
+<input id="rr" type="range" min="1" max="100" value="50" onchange="circle(2)">
+
+</p>
+
+<script>
+"use strict";
+var en=100;
+var boy=100;
+var cap=40;
+function svg1 ()
+{
+	svg.style.background=color1.value;
+}
+function circle (x)
+{
+	if (x==1) {
+		c.style.fill=color2.value;
+	}
+	
+	else if (x==2) {
+		cap=rr.value;
+		c.style.r=cap;
+		
+	}
+}
+function rect ()
+{
+	r.style.fill=color3.value;
+} 
+function svg_boyut (x)
+{
+	if(x==1)
+	{
+		en=en+100;
+		boy=boy+100;
+		svg.style.width=en;
+		svg.style.height=boy;
+		
+	
+	}
+	else if(x==2)
+	{
+		en=en-100;
+		boy=boy-100;
+		svg.style.width=en;
+		svg.style.height=boy;
+		
+	}
+	
+} 
+</script>
+
+
+</body></html>
