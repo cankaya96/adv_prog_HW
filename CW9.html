@@ -23,6 +23,7 @@
   <text x="145" y="55" fill="blue">Rect</text>
 
 <hr>
+<input type=number   id=boyut style="width:99px"> </P>
 <button type="button" name="btn" onclick="svg_boyut(1)" >boyutu arttır</button>
 <button type="button" name="btn" onclick="svg_boyut(2)" >boyutu azalt</button><br>
 
@@ -60,11 +61,11 @@ function rect ()
 	r.style.fill=color.value;
 } 
 function svg_boyut (x)
-{
+{	var ayarla=Number(boyut.value)
 	if(x==1)
 	{
-		en=en+100;
-		boy=boy+100;
+		en=en+ayarla;
+		boy=boy+ayarla;
 		svg.style.width=en;
 		svg.style.height=boy;
 		
@@ -72,8 +73,8 @@ function svg_boyut (x)
 	}
 	else if(x==2)
 	{
-		en=en-100;
-		boy=boy-100;
+		en=en-ayarla;
+		boy=boy-ayarla;
 		svg.style.width=en;
 		svg.style.height=boy;
 		
