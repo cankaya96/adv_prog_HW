@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Javascript TIC TAC TOE</title>
+        <title>X-O-X Game</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -72,7 +72,15 @@
         </div>
         <!-- Play Again And Reset All Info -->
         <button onclick="replay()">Play Again</button>
-        
+        <script>
+	
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then((reg) => { console.log('SW Registered', reg) })
+                .catch(console.log)
+        }
+    </script>
         <script>
             
             var turn = document.getElementById("turn"),
@@ -84,7 +92,7 @@
                 b1.classList.add("win");
                 b2.classList.add("win");
                 b3.classList.add("win");
-                turn.innerHTML = b1.innerHTML + " Won Congrat";
+                turn.innerHTML = b1.innerHTML + " Kazandı Tebrikler";
                 turn.style.fontSize = "40px";
             }
             
@@ -104,25 +112,25 @@
               if(box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
                  selectWinnerBoxes(box1,box2,box3);
          
-              if(box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
+              else if(box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
                  selectWinnerBoxes(box4,box5,box6);
              
-              if(box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
+              else if(box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
                  selectWinnerBoxes(box7,box8,box9);
              
-              if(box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
+              else if(box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
                  selectWinnerBoxes(box1,box4,box7);
              
-              if(box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
+              else if(box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
                  selectWinnerBoxes(box2,box5,box8);
              
-              if(box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
+              else if(box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
                  selectWinnerBoxes(box3,box6,box9);
              
-              if(box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML)
+              else if(box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML)
                  selectWinnerBoxes(box1,box5,box9);
              
-              if(box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML)
+              else if(box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML)
                  selectWinnerBoxes(box3,box5,box7);
              
             }
