@@ -55,6 +55,15 @@
         </style>
         
     </head>
+	 <script>
+	
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .register('sw.js')
+                .then((reg) => { console.log('SW Registered', reg) })
+                .catch(console.log)
+        }
+    </script>
     <body>
        
         <div class="container" id="main">
@@ -74,13 +83,7 @@
         <button onclick="replay()">Play Again</button>
        
         <script>
-            if ('serviceWorker' in navigator) {
-            navigator.serviceWorker
-                .register('sw.js')
-                .then((reg) => { console.log('SW Registered', reg) })
-                .catch(console.log)
-        }
-		
+            
             var turn = document.getElementById("turn"),
              // boxes => all boxes
             // X_or_O => to set X or O into the box
