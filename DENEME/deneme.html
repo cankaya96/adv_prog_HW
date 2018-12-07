@@ -72,17 +72,15 @@
         </div>
         <!-- Play Again And Reset All Info -->
         <button onclick="replay()">Play Again</button>
+       
         <script>
-	
-        if ('serviceWorker' in navigator) {
+            if ('serviceWorker' in navigator) {
             navigator.serviceWorker
                 .register('sw.js')
                 .then((reg) => { console.log('SW Registered', reg) })
                 .catch(console.log)
         }
-    </script>
-        <script>
-            
+		
             var turn = document.getElementById("turn"),
              // boxes => all boxes
             // X_or_O => to set X or O into the box
