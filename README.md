@@ -20,5 +20,5 @@ HOMEWORKS <br>
 - [HW4 -PWA](https://cankaya96.github.io/adv_prog_HW/HW4/PWA.html)<br>
 
 
-DÖNEM ÖDEVİ <br>
+TERM PROJECT <br>
 - [GAME - Tİc Tac Toe](https://cankaya96.github.io/adv_prog_HW/GAME/index.html)<br>
