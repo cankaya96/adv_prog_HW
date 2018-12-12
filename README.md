@@ -21,4 +21,4 @@ HOMEWORKS <br>
 
 
 DÖNEM ÖDEVİ <br>
-- [GAME - Tİc Tac Toe] (https://cankaya96.github.io/adv_prog_HW/GAME/index.html)<br>
+- [GAME - Tİc Tac Toe](https://cankaya96.github.io/adv_prog_HW/GAME/index.html)<br>
