@@ -1,6 +1,6 @@
 {
   "name": "Tic_Tac_Toe",
-	"start_url": "/adv_prog_HW/DENEME/deneme.html",
+	"start_url": "/adv_prog_HW/GAME/Tic_Tac_Toe.html",
   "display": "standalone",
   "background_color": "cyan",
   "icons": [
