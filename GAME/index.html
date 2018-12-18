@@ -9,24 +9,28 @@
             
             *{box-sizing: border-box}
             
-            .container{width: 300px;
+            .container{width: 360px;
                        overflow: hidden;
                        margin: 50px auto 0 auto;
                      }
             
             .container span{width: 100%;
                             display: block;
+							padding:5px;
                             text-align: center;
-                            font-family: sans-serif;
-                            color: #fff;
+                            font-family: cursive;
+							    border-radius: 15px;
+                            color: #727272;
                             font-size: 25px;
-                            background: #446CB3;
+                            background: #f5f7ff;
                            }
             
             .container .box{float: left;
                             width: 100px;
+							margin:10px;
                             height: 100px;
-                            border: 1px solid #000;
+							border-radius: 25px;
+                            border: 1px solid #727272;
                             transition: all .25s ease-in-out;
                             font-family: sans-serif; 
                             font-size: 85px;
@@ -35,18 +39,21 @@
                             cursor: pointer;
                           }
             
-            .container .box:hover{background: rgba(10,10,10,0.5);
-                                  color: #fff
+            .container .box:hover{background: #07074a;
+                                  color: #ffb300;
                                  }
             
-            button{background: #26C281;
-                   color: #fff;
+            button{background: white;
+                   color: #6e6e74;
                    font-weight: bold;
-                   border: 1px solid yellow;
+                   border: 1px solid #070076;
                     cursor: pointer; 
                     width: 200px;
+					border-radius: 15px;
                     height: 40px; 
                     font-size: 22px;
+					border-radius: 15px;
+					font-family:cursive;
                     display: block;
                     margin: 10px auto}
             
@@ -57,7 +64,7 @@
     </head>
 	 <script>
 	
-        if ('serviceWorker' in navigator) {
+        if ('serviceWorker' in navigator) { 
             navigator.serviceWorker
                 .register('sw.js')
                 .then((reg) => { console.log('SW Registered', reg) })
@@ -175,14 +182,10 @@
             
         </script>
         
-		<td>
-		Ref:
-      <a href="https://medium.com/front-end-weekly/tic-tac-toe-javascript-game-b0cd6e98edd9" target="ExternalDocument">Game playing</a>
-      
-    </td><br>
+		
 	<td>
 		Ref:
-      <a href="https://www.youtube.com/watch?v=Sed0stC1AcQ" target="ExternalDocument">Design</a>
+      <a href="https://1bestcsharp.blogspot.com/2017/11/javascript-tic-tac-toe-game.html" target="ExternalDocument">Game Playing</a>
     </td><br>
 	<td>
 		Ref:
