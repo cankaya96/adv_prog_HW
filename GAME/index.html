@@ -163,6 +163,11 @@
                        getWinner();
                        X_or_O += 1;  
                     }
+					
+					if(X_or_O==9){
+						turn.innerHTML = "Game Over";
+						turn.style.fontSize = "40px";
+					}
                 }
                     
                 };
