@@ -90,7 +90,7 @@
         <button onclick="replay()">Play Again</button>
        
         <script>
-            
+            var Haswinner=0;
             var turn = document.getElementById("turn"),
              // boxes => all boxes
             // X_or_O => to set X or O into the box
@@ -102,7 +102,27 @@
                 b3.classList.add("win");
                 turn.innerHTML = b1.innerHTML + " Win, Congratulations!";
                 turn.style.fontSize = "40px";
+				disableX_O();
+				
+					
+					
+				
             }
+			
+			function disableX_O(){
+				Haswinner=1;
+				document.getElementById("box1").disabled = true;
+				document.getElementById("box2").disabled = true;
+				document.getElementById("box3").disabled = true;
+				document.getElementById("box4").disabled = true;
+				document.getElementById("box5").disabled = true;
+				document.getElementById("box6").disabled = true;
+				document.getElementById("box7").disabled = true;
+				document.getElementById("box8").disabled = true;
+				document.getElementById("box9").disabled = true;
+				
+			
+			}
             
             function getWinner(){
                 
@@ -117,36 +137,63 @@
                     box9 = document.getElementById("box9");
             
             // get all posibilites
-              if(box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML)
+              if(box1.innerHTML !== "" && box1.innerHTML === box2.innerHTML && box1.innerHTML === box3.innerHTML){
                  selectWinnerBoxes(box1,box2,box3);
-         
-              else if(box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML)
+				 Haswinner=1;
+					
+				}
+              else if(box4.innerHTML !== "" && box4.innerHTML === box5.innerHTML && box4.innerHTML === box6.innerHTML){
                  selectWinnerBoxes(box4,box5,box6);
-             
-              else if(box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML)
+				 Haswinner=1;
+					
+             }
+              else if(box7.innerHTML !== "" && box7.innerHTML === box8.innerHTML && box7.innerHTML === box9.innerHTML){
                  selectWinnerBoxes(box7,box8,box9);
-             
-              else if(box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML)
+				 Haswinner=1;
+				 
+					
+             }
+              else if(box1.innerHTML !== "" && box1.innerHTML === box4.innerHTML && box1.innerHTML === box7.innerHTML){
                  selectWinnerBoxes(box1,box4,box7);
-             
-              else if(box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML)
+				 Haswinner=1;
+					
+             }
+              else if(box2.innerHTML !== "" && box2.innerHTML === box5.innerHTML && box2.innerHTML === box8.innerHTML){
                  selectWinnerBoxes(box2,box5,box8);
-             
-              else if(box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML)
+				    
+					Haswinner=1;
+             }
+              else if(box3.innerHTML !== "" && box3.innerHTML === box6.innerHTML && box3.innerHTML === box9.innerHTML){
                  selectWinnerBoxes(box3,box6,box9);
-             
-              else if(box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML)
+				    
+					Haswinner=1;
+             }
+              else if(box1.innerHTML !== "" && box1.innerHTML === box5.innerHTML && box1.innerHTML === box9.innerHTML){
                  selectWinnerBoxes(box1,box5,box9);
-             
-              else if(box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML)
+				 Haswinner=1;
+				   
+             }
+              else if(box3.innerHTML !== "" && box3.innerHTML === box5.innerHTML && box3.innerHTML === box7.innerHTML){
                  selectWinnerBoxes(box3,box5,box7);
-             
+				    
+					Haswinner=1;
+              }
+			  else{
+				if(X_or_O==8){
+						turn.innerHTML = "Game Over";
+						turn.style.fontSize = "40px";
+					}
+			  }
             }
             
             
             // set event onclick
+			
             for(var i = 0; i < boxes.length; i++){
+			
                 boxes[i].onclick = function(){
+				if(Haswinner ==0){
+			console.log("HAS Winner ",Haswinner);
                     // not allow to change the value of the box
                     if(this.innerHTML !== "X" && this.innerHTML !== "O"){
                     if(X_or_O%2 === 0){
@@ -164,23 +211,29 @@
                        X_or_O += 1;  
                     }
 					
-					if(X_or_O==9){
-						turn.innerHTML = "Game Over";
-						turn.style.fontSize = "40px";
-					}
                 }
-                    
+                    }
+					else{
+					disableX_O();
+					console.log("HAS Winner ",Haswinner);
+				}
                 };
+				
+				
+				
             }
             
+			
             function replay(){
                 
                 for(var i = 0; i < boxes.length; i++){
+					Haswinner=0;
                     boxes[i].classList.remove("win");
                     boxes[i].innerHTML = "";
                     turn.innerHTML = "Play";
                     turn.style.fontSize = "25px";
-                    
+					
+                    X_or_O = 0;
                 }
                 
             }
