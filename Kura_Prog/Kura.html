@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CW7 </title>
+</head>
+
+
+ <link rel="manifest" href="manifest.json">
+<script>
+"use strict";
+function Add(){
+var ad = Name.value
+eklenenler.push(ad);
+var meslekler = Meslek.value;
+eklenenler.push(meslekler);
+var maaslar = Number(Maas.value);
+eklenenler.push(maaslar);
+
+
+
+}
+function Kura(){
+var as_kazanan=Number(Asil.value);
+var ye_kazanan=Number(Yedek.value);
+
+var total=Number(Asil.value) + Number(Yedek.value);
+
+
+while(arr.length < total){
+    var r = Math.floor(Math.random() * 10) + 1;
+    if(arr.indexOf(r) === -1) arr.push(r);
+}
+console.log(arr)
+makeRows2();
+
+
+}
+
+function makeRows2(){
+var yedek_devam=Number(Asil.value)
+let row = "<th></th>";
+    row += "<th>"+"SIRALAMA"+"</th>";
+    row += "<th>"+"NUMARA"+"</th>";
+    let text = "<tr>"+row+"</tr>";
+	
+	for (let i = 0; i < Number(Asil.value); i++) {
+       row = "<th>"+"</th>";
+       
+	   row +="<td>"+(i+1)+".KAZANAN"+"</td>";
+	   row +="<td>"+arr[i]+"</td>";
+       text += "<tr>"+row+"</tr>";
+    }
+	
+	for (let i = 0; i < Number(Yedek.value); i++) {
+       row = "<th>"+"</th>";
+       
+	   row +="<td>"+(i+1)+".YEDEK"+"</td>";
+	   row +="<td>"+arr[i+yedek_devam]+"</td>";
+       text += "<tr>"+row+"</tr>";
+    }
+   tablo.innerHTML = text;
+}
+function makeRows(){ 	
+
+let row = "<th></th>";
+    row += "<th>"+"Name"+"</th>";
+    row += "<th>"+"Meslek"+"</th>";
+	row += "<th>"+"Maaş"+"</th>";
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i < eklenenler.length/3; i++) {
+       row = "<th>"+"</th>";
+       
+	   row +="<td>"+eklenenler[i*3]+"</td>";
+	   row +="<td>"+eklenenler[i*3+1]+"</td>";
+	   row +="<td>"+eklenenler[i*3+2]+"</td>";
+       text += "<tr>"+row+"</tr>";
+    }
+   tablo.innerHTML = text;
+
+}
+function Print(){
+
+makeRows();
+}
+
+
+
+
+function Max(){
+let temp=0;
+maxDizi=[];
+	for(let i=0; i<eklenenler.length/3; i++){
+		if(temp==0)
+		temp=eklenenler[2];
+		
+		if(temp<eklenenler[i*3+2]){
+		  temp=eklenenler[i*3+2];
+		
+		}
+
+	}
+	
+	for(let i=0; i<eklenenler.length/3; i++){
+	 if(temp==eklenenler[i*3+2]){
+	    maxDizi.push(eklenenler[i*3]);
+		maxDizi.push(temp);
+		break;
+	 }
+	
+	}
+	let row = "<th></th>";
+    row += "<th>"+"Name"+"</th>";
+    row += "<th>"+"Aldığı Maaş"+"</th>";
+	let text2 = "<tr>"+row+"</tr>";
+	row = "<th>"+"</th>";
+       
+	   row +="<td>"+maxDizi[0]+"</td>";
+	   row +="<td>"+maxDizi[1]+"</td>";
+	   console.log(temp);
+       text2 += "<tr>"+row+"</tr>";
+	   
+	   tablo3.innerHTML = text2;
+}
+
+function Güncelle(){ 
+Print();
+Max();
+
+}
+</script>
+<body>
+<center> <img src="gural.png" alt="Güral Logo"  >
+<p>ASİL KURA SAYISI = <input type=number   id=Asil style="width:99px"> </P>
+<p>YEDEKLER = <input type=number   id=Yedek style="width:99px"> </P>
+
+<p>
+<input type=button value="ÇEKİLİŞ"  onClick="Kura()">
+</p>
+<hr />
+<table id="tablo" >
+
+
+
+
+</table>
+<hr />
+<table id="tablo3">
+
+
+</table>
+
+
+
+Ref: 
+<a href="https://maeyler.github.io/JS/hard/Table%20maker.html" target="ExternalDocument">Table Examples</a>
+<a href="https://cankaya96.github.io/adv_prog_HW/HW3/Animation.html" target="ExternalDocument">HW3/Animation</a>
+</body>
+
+
+<script>
+   
+    var eklenenler=[];
+	var maxDizi=[];
+	var arr=[];
+</script>
+
+
+</html>
