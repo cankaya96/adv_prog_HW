@@ -420,7 +420,11 @@ tablo1.innerHTML = text;
 	   row +="<td>"+arr[24]+"</td>";
        text += "<tr>"+row+"</tr>";
 	temp=temp+1;
-
+	
+	listeleme.style.visibility = "visible";
+	sıralama.style.visibility = "hidden";
+	// listeleme.disabled = false;
+	// sıralama.disabled = true;
 tablo1.innerHTML = text;
 	}
 	
@@ -429,9 +433,8 @@ tablo1.innerHTML = text;
 
 function Kura(){
 var as_kazanan=Number(Asil.value);
-var ye_kazanan=Number(Yedek.value);
 
-var total=Number(Asil.value) + Number(Yedek.value);
+var total=Number(Asil.value)
 
 
 while(arr.length < total){
@@ -614,7 +617,7 @@ row = "<th>"+"</th>";
 	   row +="<td>"+arr[24]+"</td>";
        text += "<tr>"+row+"</tr>";	   
 	   
-	   row = "<th>"+"</th>";
+	   /** row = "<th>"+"</th>";
        
 	   row +="<td>"+"BİRİNCİ YEDEK"+"</td>";
 	   row +="<td>"+arr[25]+"</td>";
@@ -669,7 +672,7 @@ row = "<th>"+"</th>";
 	   row = "<th>"+"</th>";
 	   row +="<td>"+"ONUNCU YEDEK"+"</td>";
 	   row +="<td>"+arr[34]+"</td>";
-       text += "<tr>"+row+"</tr>";	
+       text += "<tr>"+row+"</tr>";	**/
 	   
 	   tablo.innerHTML = text;
 
@@ -750,15 +753,14 @@ Max();
 </script>
 <body>
 <center> <img src="kahramanlar.jpg" alt="Kahramanlar Logo"  >
-<p>ASİL KİŞİ SAYISI = <input type=number   id=Asil style="width:99px"> </P>
-<p>YEDEKLER = <input type=number   id=Yedek style="width:99px"> </P>
+<p>SEÇİLECEK KUPON SAYISI = <input type=number   id=Asil style="width:99px"> </P>
 
 <p>
 
 
-<input type=button value="SIRADAKİ"  onClick="Sırayla()">
+<input type=button value="SIRADAKİ"  onClick="Sırayla()" id=sıralama>
 
-<input type=button value="LİSTELE"  onClick="makeRows3()">
+<input type=button value="LİSTELE"  onClick="makeRows3()" style="visibility:hidden;" id=listeleme>
 
 </p>
 <hr />
